@@ -10,25 +10,26 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import com.brillio.imageValidation.configuration.AppConfig;
+import com.brillio.imageValidation.configuration.AppInitializer;
 import com.brillio.imageValidation.configuration.HibernateConfiguration;
 import com.brillio.imageValidation.dao.JobDao;
 import com.brillio.imageValidation.imageValidationException.ImageValidationException;
 import com.brillio.imageValidation.service.JobConfigurationInterface;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes={HibernateConfiguration.class})
+@ContextConfiguration(classes = { HibernateConfiguration.class,
+		AppConfig.class, AppInitializer.class })
 @WebAppConfiguration
-public class JobTest extends AbstractTransactionalJUnit4SpringContextTests
- { 
+public class JobTest extends AbstractTransactionalJUnit4SpringContextTests {
 
-	
 	private JobDao jobdao;
-	
+
 	@Autowired
 	public void setJobdao(JobDao jobdao) {
 		this.jobdao = jobdao;
 	}
-	
+
 	private JobConfigurationInterface configurationServcie;
 
 	@Autowired
@@ -36,15 +37,15 @@ public class JobTest extends AbstractTransactionalJUnit4SpringContextTests
 			JobConfigurationInterface configurationServcie) {
 		this.configurationServcie = configurationServcie;
 	}
-	
+
 	@Test
 	public void testDaoLayer() throws ImageValidationException {
 		Assert.assertEquals(16, jobdao.getAllJobDetails().size());
 	}
-	
+
 	@Test
 	public void testServiceLayer() throws ImageValidationException {
 		Assert.assertTrue(configurationServcie.getJobDetailsByJobName("test"));
-		
+
 	}
 }
