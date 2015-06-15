@@ -1,0 +1,152 @@
+/* Configuration Page */
+.panel-body {
+	border: 1px solid #008A8A;
+}
+.panel-title {
+	color: white;
+}
+.mainD {
+
+}
+.headerD {
+	height: 20%;
+}
+
+/* Pulling down the below div */
+.bodyD {
+	height: 90%;
+	padding: 30px 0 0 0;
+}
+.bodyLeftD {
+	width: 15%;
+	float: left;
+}
+.bodyLeftD :first-child {
+	margin: 10px 0 0 0;
+}
+.bodyLeftD ul li {
+	left: 0;
+	list-style: none;
+	padding: 0 0 20px 0;
+	font-size: 16px;
+	text-decoration: none;	
+}
+.bodyLeftD ul li :hover {
+	font-size: 17px;
+	text-decoration: none;	
+}
+.bodyRightD {
+	width: 84%;
+	float: right;
+}
+.bodyRightD .panel{
+	max-width: 60%;
+	margin: 0 0 0 10%;
+}
+.headerD h1{
+	text-align: center;
+	font-size: 30px;
+}
+#configD {
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+/* Space Between rows */
+#formTable tr > td{
+	padding-bottom: 15px;
+}
+/* Space between Columns */
+#formTable tr :nth-child(2){
+	padding-left: 20px;
+}
+/* Making the titles bold */
+.item td:first-child {
+	font-weight: bold;
+}
+select {
+	height: 26px; 
+	width: 250px;
+	border-radius: 2px;
+}
+input[type='text'], input[type='number'] {
+	width: 250px;
+}
+
+/* **** Jobs Page ***** */
+.back-gray {
+	border: 1px solid #e3e3e3;
+	background-color: #f9f9f9;
+	color: #337ab7;
+}
+.back-green {
+	border: 1px solid #d6e9c6;
+	background-color: #dff0d8;
+}
+.back-yellow {
+	border: 1px solid #fcf8e3;
+	background-color: #faebcc;
+}
+.back-blue {
+	border: 1px solid #78AFE6;
+	background-color: #AAD4FF;
+}
+.back-red {
+	border: 1px solid #f2dede;
+	background-color: #ebccd1;
+}
+.jobsD {
+	max-width: 95%;
+	margin: 0 auto;
+}
+#jobsTable {
+	width: 100%;
+}
+#jobsTable tr:first-child {
+	font-weight: bold;
+	text-align: center;
+}
+#jobsTable tr td {
+	padding: 10px 5px 10px 5px;
+	text-align: center;
+}
+#jobsTable tr :nth-child(6) {
+	width: 2%;
+}
+select {
+	width: 100px;
+	border-radius: 2px;
+}
+
+/* ** Report Page ** */
+.jobListD{
+	width: 15%;
+	float: left;
+}
+.buildListD{
+	width: 25%;
+	float: left;
+}
+.imageListD{
+	width: 59%;
+	float: right;	
+}
+
+#imageListDeatailsTable tr td.left {
+	text-align: left;
+}
+#jobListTable, #buildListTable, #imageListTable, #imageListDeatailsTable{
+	width: 97%;	
+}
+#jobListTable tr td, #buildListTable tr td, #imageListTable tr td, #imageListDeatailsTable tr td {
+	padding: 5px;
+	text-align: center;
+}
+#jobListTable tr:first-child, #buildListTable tr:first-child, #imageListTable tr:first-child, #imageListDeatailsTable tr:first-child{
+	font-weight: bold;
+	text-align: center;
+}
+
+#jobListTable td.job:hover, #buildListTable td.build:hover, #imageListDeatailsTable tr td .open:hover {
+	cursor: pointer;
+}
