@@ -1,2 +1,2 @@
 # Image-Validation
-Brillio's Image-Validation for PFG Client.
+Brillio's Image-Validation.
