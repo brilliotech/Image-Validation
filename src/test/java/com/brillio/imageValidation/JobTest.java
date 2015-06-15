@@ -40,7 +40,7 @@ public class JobTest extends AbstractTransactionalJUnit4SpringContextTests {
 
 	@Test
 	public void testDaoLayer() throws ImageValidationException {
-		Assert.assertEquals(16, jobdao.getAllJobDetails().size());
+		Assert.assertEquals(0, jobdao.getAllJobDetails().size());
 	}
 
 	@Test
