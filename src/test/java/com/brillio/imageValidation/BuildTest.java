@@ -1,7 +1,6 @@
 package com.brillio.imageValidation;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,30 +13,34 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import com.brillio.imageValidation.configuration.AppConfig;
 import com.brillio.imageValidation.configuration.AppInitializer;
 import com.brillio.imageValidation.configuration.HibernateConfiguration;
-import com.brillio.imageValidation.dao.JobDao;
+import com.brillio.imageValidation.dao.BuildDao;
 import com.brillio.imageValidation.imageValidationException.ImageValidationException;
-import com.brillio.imageValidation.service.JobConfigurationInterface;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { HibernateConfiguration.class,
 		AppConfig.class, AppInitializer.class })
 @WebAppConfiguration
-public class JobTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class BuildTest extends AbstractTransactionalJUnit4SpringContextTests {
 
 	@Autowired
-	private JobDao jobdao;
-
-	@Autowired
-	private JobConfigurationInterface configurationServcie;
+	private BuildDao builddao;
 
 	@Test
 	public void testDaoLayer() throws ImageValidationException {
-		assertEquals(16, jobdao.getAllJobDetails().size());
+		assertEquals(16, builddao.getAllBaseLinedBuildByJob("Job2").size());
 	}
 
 	@Test
-	public void testServiceLayer() throws ImageValidationException {
-		assertTrue(configurationServcie.getJobDetailsByJobName("Job2"));
+	public void testDao() throws ImageValidationException {
+		assertEquals("Build-Fri_05.29.2015_at_04:07:23.336PM",
+				builddao.getBuildDetailsByBuildId(1).getBuild_Name());
+
+	}
+
+	@Test
+	public void testDaoBuild() throws ImageValidationException {
+		assertEquals("Build-Fri_05.29.2015_at_04:07:23.336PM",
+				builddao.getBuildDetailsByBuildId(2).getBuild_Name());
 
 	}
 }
